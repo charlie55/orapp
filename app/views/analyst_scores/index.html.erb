@@ -1,0 +1,29 @@
+<h1>Listing analyst_scores</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Score</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @analyst_scores.each do |analyst_score| %>
+      <tr>
+        <td><%= analyst_score.name %></td>
+        <td><%= analyst_score.score %></td>
+        <td><%= link_to 'Show', analyst_score %></td>
+        <td><%= link_to 'Edit', edit_analyst_score_path(analyst_score) %></td>
+        <td><%= link_to 'Destroy', analyst_score, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Analyst score', new_analyst_score_path %>
